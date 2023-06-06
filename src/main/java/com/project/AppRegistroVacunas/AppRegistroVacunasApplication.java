@@ -1,13 +1,13 @@
-package com.AppRegistroVacunas.demo;
+package com.project.AppRegistroVacunas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class AppVacunasApplication {
+public class AppRegistroVacunasApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AppVacunasApplication.class, args);
+		SpringApplication.run(AppRegistroVacunasApplication.class, args);
 	}
 
 }

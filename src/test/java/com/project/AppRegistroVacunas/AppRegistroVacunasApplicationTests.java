@@ -1,10 +1,10 @@
-package com.AppRegistroVacunas.demo;
+package com.project.AppRegistroVacunas;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AppVacunasApplicationTests {
+class AppRegistroVacunasApplicationTests {
 
 	@Test
 	void contextLoads() {
