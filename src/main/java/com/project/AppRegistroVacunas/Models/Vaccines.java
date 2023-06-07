@@ -14,8 +14,9 @@ public class Vaccines {
     private String name;
     @Column(name = "made_in")
     private String madeIn;
-    @Column(name="brand")
-    private String brand;
+    @Column(name = "made_by")
+    private String madeBy;
+
     @Column(name = "against_to")
     private String againstTo;
     @Column(name = "creation_date")
@@ -27,10 +28,10 @@ public class Vaccines {
 
     }
 
-    public Vaccines(String name, String madeIn, String brand, String againstTo, Date creationDate, Date dueDate) {
+    public Vaccines(String name, String madeIn, String madeBy, String againstTo, Date creationDate, Date dueDate) {
         this.name = name;
         this.madeIn = madeIn;
-        this.brand = brand;
+        this.madeBy = madeBy;
         this.againstTo = againstTo;
         this.creationDate = creationDate;
         this.dueDate = dueDate;
@@ -60,12 +61,12 @@ public class Vaccines {
         this.madeIn = madeIn;
     }
 
-    public String getBrand() {
-        return brand;
+    public String getMadeBy() {
+        return madeBy;
     }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
+    public void setMadeBy(String madeBy) {
+        this.madeBy = madeBy;
     }
 
     public String getAgainstTo() {

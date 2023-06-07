@@ -10,18 +10,22 @@ public class Persons {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
-    @Column(name="dni")
-    private Long dni;
-    @Column(name="name")
+
+    @Column(name="dni", nullable = false, length = 8)
+    private String dni;
+    @Column(name="name",nullable = false, length = 20)
     private String name;
-    @Column(name="last_name")
+    @Column(name="last_name",nullable = false, length = 20)
     private String lastname;
-    @Column(name="email")
+    @Column(name="email",nullable = false, length = 30)
     private String email;
-    @Column(name="job")
+    @Column(name="job",nullable = false, length = 20)
     private String job;
-    @Column(name="birthday")
+    @Column(name="birthday",nullable = false)
     private Date birthday;
+
+    @Column(name="nationality",nullable = false, length = 20)
+    private String nationality;
     @Column(name="sex")
     private char sex;
 
@@ -29,13 +33,14 @@ public class Persons {
 
     }
 
-    public Persons( Long dni, String name, String lastname, String email, String job, Date birthday, char sex) {
+    public Persons(String dni, String name, String lastname, String email, String job, Date birthday, String nationality, char sex) {
         this.dni = dni;
         this.name = name;
         this.lastname = lastname;
         this.email = email;
         this.job = job;
         this.birthday = birthday;
+        this.nationality = nationality;
         this.sex = sex;
     }
 
@@ -48,11 +53,11 @@ public class Persons {
         this.id = id;
     }
 
-    public Long getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(Long dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 
@@ -94,6 +99,14 @@ public class Persons {
 
     public void setBirthday(Date birthday) {
         this.birthday = birthday;
+    }
+
+    public String getNationality() {
+        return nationality;
+    }
+
+    public void setNationality(String nationality) {
+        this.nationality = nationality;
     }
 
     public char getSex() {
