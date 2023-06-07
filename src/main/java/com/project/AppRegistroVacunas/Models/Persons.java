@@ -14,7 +14,7 @@ public class Persons {
     private Long dni;
     @Column(name="name")
     private String name;
-    @Column(name="lastName")
+    @Column(name="last_name")
     private String lastname;
     @Column(name="email")
     private String email;
