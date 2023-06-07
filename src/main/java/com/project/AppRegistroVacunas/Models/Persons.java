@@ -10,7 +10,6 @@ public class Persons {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
-
     @Column(name="dni", nullable = false, length = 8)
     private String dni;
     @Column(name="name",nullable = false, length = 20)
