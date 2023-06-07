@@ -6,5 +6,5 @@ public class Vaccines {
     private String name;
     private String madeIn;
     private String brand;
-    private String
+
 }
