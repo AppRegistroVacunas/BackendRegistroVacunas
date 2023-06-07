@@ -7,15 +7,7 @@ import java.util.Date;
 @Table(name="Persons")
 public class Persons {
     @Id
-    @SequenceGenerator(
-            name="client_sequence",
-            sequenceName = "client_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "client_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private int id;
     @Column(name="dni")
