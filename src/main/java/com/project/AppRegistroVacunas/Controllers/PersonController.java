@@ -5,16 +5,16 @@ import com.project.AppRegistroVacunas.Models.Persons;
 import com.project.AppRegistroVacunas.Repositories.PersonRepository;
 import com.project.AppRegistroVacunas.Services.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/persons/v0")
 public class PersonController {
-     PersonService personService;
+
+    @Autowired
+     private PersonService personService;
 
     public PersonController(PersonService personService) {
         this.personService = personService;
@@ -26,8 +26,21 @@ public class PersonController {
         return personService.findAll();
     }
 
+    @PostMapping("/persons")
+    @ResponseBody
+    public String save(@RequestBody Persons persons){
 
- //   @Autowired
+     return personService.addPerson(persons);
+    }
+
+    @GetMapping("/persons/{dni}")
+    @ResponseBody
+    public Persons findId(@PathVariable String dni){
+
+        return personService.findById(dni);
+    }
+
+
 
 
 }

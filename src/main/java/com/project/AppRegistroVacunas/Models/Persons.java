@@ -6,11 +6,9 @@ import java.util.Date;
 @Entity
 @Table(name="Persons")
 public class Persons {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name="id")
-    private int id;
-    @Column(name="dni", nullable = false, length = 8)
+    @Column(name="id",length = 8)
     private String dni;
     @Column(name="name",nullable = false, length = 20)
     private String name;
@@ -44,13 +42,6 @@ public class Persons {
     }
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDni() {
         return dni;
