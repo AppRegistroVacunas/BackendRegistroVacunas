@@ -10,4 +10,7 @@ public interface PersonService {
     List<Persons> findAll();
     String addPerson(Persons persons);
     Persons findById(String dni);
+    String updatePerson(Persons persons);
+
+    String deletePerson(String dni);
 }

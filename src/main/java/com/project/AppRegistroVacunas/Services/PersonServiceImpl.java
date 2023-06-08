@@ -47,9 +47,38 @@ public class PersonServiceImpl implements PersonService{
         return personRepository.findById(dni);
     }
 
+    @Override
+    @Transactional
+    public String updatePerson(Persons persons) {
+        String dni=persons.getDni();
+        String name=persons.getName();
+        String lastname=persons.getLastname();
+        String email=persons.getEmail();
+        String job=persons.getJob();
+        Date birthday=persons.getBirthday();
+        String nationality=persons.getNationality();
+        char sex=persons.getSex();
+       personRepository.updatePerson(dni,name,lastname,email,job,birthday,nationality,sex);
+        try {
+            return "the operation was successful";
+        }catch (Error e){
+            return e.getMessage();
+        }
 
+    }
 
+    @Override
+    @Transactional
+    public String deletePerson(String dni) {
 
+        personRepository.deletePerson(dni);
+        try {
+            return "was removed successful";
+        }catch (Error e){
+            return e.getMessage();
+        }
+
+    }
 
 
 }

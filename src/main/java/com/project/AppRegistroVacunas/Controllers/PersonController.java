@@ -41,6 +41,19 @@ public class PersonController {
     }
 
 
+    @PutMapping("/persons")
+    @ResponseBody
+    public String update(@RequestBody Persons persons){
+        return personService.updatePerson(persons);
+    }
+
+    @DeleteMapping("/persons/{dni}")
+    @ResponseBody
+    public String update(@PathVariable String dni){
+        return personService.deletePerson(dni);
+    }
+
+
 
 
 }
