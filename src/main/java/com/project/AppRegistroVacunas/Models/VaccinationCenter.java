@@ -13,7 +13,7 @@ public class VaccinationCenter {
     @Column(name="id")
     private int id;
     @Column(name="name")
-    private Date date;
+    private String name;
     @Column(name="address")
     private String address;
 
@@ -22,8 +22,8 @@ public class VaccinationCenter {
 
     }
 
-    public VaccinationCenter(Date date, String address) {
-        this.date = date;
+    public VaccinationCenter(String name, String address) {
+        this.name = name;
         this.address = address;
     }
 
@@ -36,12 +36,12 @@ public class VaccinationCenter {
         this.id = id;
     }
 
-    public Date getDate() {
-        return date;
+    public String getName() {
+        return name;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public void setDate(String name) {
+        this.name = name;
     }
 
     public String getAddress() {

@@ -17,6 +17,7 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public List<Persons> findAll() {
+
         return personRepository.findAll();
     }
 
@@ -44,6 +45,7 @@ public class PersonServiceImpl implements PersonService{
 
     @Override
     public Persons findById(String dni){
+
         return personRepository.findById(dni);
     }
 
