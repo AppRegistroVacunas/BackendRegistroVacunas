@@ -24,7 +24,7 @@ public class VaccinesController {
 
     @PostMapping("/vaccines")
     @ResponseBody
-    public String save ( @RequestBody Vaccines vaccines){
+    public String addVaccines( @RequestBody Vaccines vaccines){
         return vaccinesService.addVaccines(vaccines);
     }
 
@@ -39,7 +39,7 @@ public class VaccinesController {
     public  String update (@RequestBody Vaccines vaccines){
         return vaccinesService.updateVaccines(vaccines);
     }
-    @GetMapping("/vaccines/{id}")
+    @DeleteMapping("/vaccines/{id}")
     @ResponseBody
     public String update (@PathVariable int id){
         return vaccinesService.deleteVaccines(id);
