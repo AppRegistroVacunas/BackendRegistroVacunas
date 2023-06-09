@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping ("/api/vaccinationCenter/v1")
+@RequestMapping ("/api/vaccinationCenter/v0")
 public class VaccinationCenterController {
 
     @Autowired
@@ -21,6 +21,7 @@ public class VaccinationCenterController {
 
     @GetMapping("/vaccinationCenter")
     public  List<VaccinationCenter> findAll(){
+
         return vaccinationCenterService.findAll();
     }
 
@@ -44,6 +45,7 @@ public class VaccinationCenterController {
     @DeleteMapping("/vaccinationCenter/{id}")
     @ResponseBody
     public String update(@PathVariable int id){
+
         return vaccinationCenterService.deleteVaccinationCenter(id);
     }
 

@@ -15,6 +15,7 @@ public class VaccinationCenterServiceImpl implements VaccinationCenterService   
 
     @Override
     public List<VaccinationCenter> findAll() {
+
         return vaccinationCenterReposi.findAll();
     }
 
@@ -36,6 +37,7 @@ public class VaccinationCenterServiceImpl implements VaccinationCenterService   
 
     @Override
     public VaccinationCenter findById(int id) {
+
         return vaccinationCenterReposi.findById(id);
     }
 
