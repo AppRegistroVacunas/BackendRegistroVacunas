@@ -51,7 +51,6 @@ public class PersonController {
     @DeleteMapping("/persons/{dni}")
     @ResponseBody
     public String update(@PathVariable String dni){
-
         return personService.deletePerson(dni);
     }
 

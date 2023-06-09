@@ -1,6 +1,5 @@
 package com.project.AppRegistroVacunas.Repositories;
 
-import com.project.AppRegistroVacunas.Models.Persons;
 import com.project.AppRegistroVacunas.Models.Vaccines;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -16,8 +15,8 @@ public interface VaccinesRepository extends CrudRepository<Vaccines,Integer> {
     @Query(value = "from Vaccines ")
     List<Vaccines> findAll();
     @Modifying
-    @Query (value = "INSERT INTO Vaccines(id,name,made_in,made_by,against_to,creation_date,due_date)"+
-    "VALUES(:id,:name,:made_in,:made_by,against_to,creation_date,due_date")
+    @Query(value = "INSERT INTO Vaccines(id, name, made_in, made_by, against_to, creation_date, due_date) "+
+            "VALUES(:id, :name, :made_in, :made_by, :against_to, :creation_date, :due_date)")
     public void addVaccines(@Param("id") int id,
                             @Param("name") String name,
                             @Param("made_in") String made_in,
@@ -28,7 +27,7 @@ public interface VaccinesRepository extends CrudRepository<Vaccines,Integer> {
                             );
 
     @Query("from Vaccines vac where  vac.id = :id")
-    Persons findBy(@Param("id") int id);
+    Vaccines findById(@Param("id") int id);
 
     @Modifying
     @Query(value= "UPDATE Vaccines SET name=:name,made_in=:made_in,made_by=:made_by,against_to=:against_to,creation_date=:creation_date,due_date=:due_date"+

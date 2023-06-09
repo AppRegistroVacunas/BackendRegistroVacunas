@@ -42,7 +42,7 @@ public class VaccinesServiceImpl implements VaccinesService {
 
     @Override
     public Vaccines findById(int id) {
-        return vaccinesRepository.findById(id);
+        return  vaccinesRepository.findById(id);
     }
 
 
