@@ -15,24 +15,14 @@ public interface VaccinesRepository extends CrudRepository<Vaccines,Integer> {
     @Query(value = "from Vaccines ")
     List<Vaccines> findAll();
     @Modifying
-    @Query(value = "INSERT INTO Vaccines(id, name, madeIn, madeBy, againstTo, creationDate, dueDate) "+
-            "VALUES(:id, :name, :madeIn, :madeBy, :againstTo, :creationDate, :dueDate)")
-    public void addVaccines(@Param("id") int id,
-                            @Param("name") String name,
+    @Query(value = "INSERT INTO Vaccines( name, madeIn, madeBy, againstTo, creationDate, dueDate) "+
+            "VALUES(:name, :madeIn, :madeBy, :againstTo, :creationDate, :dueDate)")
+    public void addVaccines(@Param("name") String name,
                             @Param("madeIn") String madeIn,
                             @Param("madeBy") String madeBy,
                             @Param("againstTo") String againstTo,
                             @Param("creationDate")Date creationDate,
-                            @Param("dueDate") Date dueDate
-    );
-                            /*@Param("name") String name,
-                            @Param("made_in") String made_in,
-                            @Param("made_by") String made_by,
-                            @Param("against_to") String against_to,
-                            @Param("creation_date")Date creation_date,
-                            @Param("due_date") Date due_date
-                            );*/
-
+                            @Param("dueDate") Date dueDate);
     @Query("from Vaccines vac where  vac.id = :id")
     Vaccines findById(@Param("id") int id);
 
@@ -40,7 +30,7 @@ public interface VaccinesRepository extends CrudRepository<Vaccines,Integer> {
     @Query(value= "UPDATE Vaccines SET name=:name,madeIn=:madeIn,madeBy=:madeBy,againstTo=:againstTo,creationDate=:creationDate,dueDate=:dueDate"+
     " WHERE id=:id ")
     public  void updateVaccine (
-            @Param("id") int id,
+            @Param("id")int id,
             @Param("name") String name,
             @Param("madeIn") String madeIn,
             @Param("madeBy") String madeBy,
@@ -49,6 +39,6 @@ public interface VaccinesRepository extends CrudRepository<Vaccines,Integer> {
             @Param("dueDate") Date dueDate
     );
     @Modifying
-    @Query (value = "delete  from Vaccines vac where vac.id =:id")
+    @Query (value = "delete from Vaccines vac where vac.id =:id")
     public void deleteVaccine(@Param("id")int id);
 }

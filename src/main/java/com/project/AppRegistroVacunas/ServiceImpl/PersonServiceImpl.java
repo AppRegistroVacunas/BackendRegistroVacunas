@@ -1,7 +1,8 @@
-package com.project.AppRegistroVacunas.Services;
+package com.project.AppRegistroVacunas.ServiceImpl;
 
 import com.project.AppRegistroVacunas.Models.Persons;
 import com.project.AppRegistroVacunas.Repositories.PersonRepository;
+import com.project.AppRegistroVacunas.Services.PersonService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 @Service
-public class PersonServiceImpl implements PersonService{
+public class PersonServiceImpl implements PersonService {
     @Autowired
     PersonRepository personRepository;
 

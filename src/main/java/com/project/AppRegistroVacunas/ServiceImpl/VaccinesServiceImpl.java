@@ -1,7 +1,8 @@
-package com.project.AppRegistroVacunas.Services;
+package com.project.AppRegistroVacunas.ServiceImpl;
 
 import com.project.AppRegistroVacunas.Models.Vaccines;
 import com.project.AppRegistroVacunas.Repositories.VaccinesRepository;
+import com.project.AppRegistroVacunas.Services.VaccinesService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,15 +24,14 @@ public class VaccinesServiceImpl implements VaccinesService {
     @Override
     @Transactional
     public String addVaccines(Vaccines vaccines) {
-        int id=vaccines.getId();
         String name=vaccines.getName();
         String madeIn=vaccines.getMadeIn();
         String madeBy=vaccines.getMadeBy();
-        String againsTo=vaccines.getAgainstTo();
+        String againstTo=vaccines.getAgainstTo();
         Date creationDate=vaccines.getCreationDate();
         Date dueDate=vaccines.getDueDate();
 
-        vaccinesRepository.addVaccines(id,name,madeIn,madeBy,againsTo,creationDate,dueDate);
+        vaccinesRepository.addVaccines(name,madeIn,madeBy,againstTo,creationDate,dueDate);
 
         try {
             return "the operation was successful";
@@ -48,25 +48,15 @@ public class VaccinesServiceImpl implements VaccinesService {
 
     @Override
     @Transactional
-    public String updateVaccines(Vaccines vaccines) {
-        int id=vaccines.getId();
+    public String updateVaccines(Vaccines vaccines, int id) {
         String name=vaccines.getName();
         String madeIn=vaccines.getMadeIn();
         String madeBy=vaccines.getMadeBy();
-        String againsTo=vaccines.getAgainstTo();
+        String againstTo=vaccines.getAgainstTo();
         Date creationDate=vaccines.getCreationDate();
         Date dueDate=vaccines.getDueDate();
 
-        vaccinesRepository.addVaccines(id,name,madeIn,madeBy,againsTo,creationDate,dueDate);
-        /*String name=vaccines.getName();
-        String made_in=vaccines.getMadeIn();
-        String made_by=vaccines.getMadeBy();
-        String against_to=vaccines.getAgainstTo();
-        Date creation_date=vaccines.getCreationDate();
-        Date due_date=vaccines.getDueDate();
-
-        vaccinesRepository.addVaccines(id,name,made_in,made_by,against_to,creation_date,due_date);*/
-
+        vaccinesRepository.updateVaccine(id,name,madeIn,madeBy,againstTo,creationDate,dueDate);
         try {
             return "the operation was successful";
         }catch (Error e){

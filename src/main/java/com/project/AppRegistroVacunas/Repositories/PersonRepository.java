@@ -36,7 +36,7 @@ public interface PersonRepository extends CrudRepository<Persons,Integer> {
     Persons findById(@Param("dni") String dni);
 
     @Modifying
-    @Query(value="UPDATE Persons  SET name=:name,lastname=:lastname,email=:email,job=:job,birthday=:birthday,nationality=:nationality,sex=:sex" +
+    @Query(value="UPDATE Persons SET name=:name,lastname=:lastname,email=:email,job=:job,birthday=:birthday,nationality=:nationality,sex=:sex" +
             " WHERE dni=:dni")
     public void updatePerson(@Param("dni") String dni,
                              @Param("name") String name,

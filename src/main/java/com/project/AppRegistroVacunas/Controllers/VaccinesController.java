@@ -34,10 +34,10 @@ public class VaccinesController {
         return vaccinesService.findById(id);
     }
 
-    @PutMapping("/vaccines")
+    @PutMapping("/vaccines/{id}")
     @ResponseBody
-    public  String update (@RequestBody Vaccines vaccines){
-        return vaccinesService.updateVaccines(vaccines);
+    public  String update (@RequestBody Vaccines vaccines,@PathVariable int id){
+        return vaccinesService.updateVaccines(vaccines,id);
     }
     @DeleteMapping("/vaccines/{id}")
     @ResponseBody

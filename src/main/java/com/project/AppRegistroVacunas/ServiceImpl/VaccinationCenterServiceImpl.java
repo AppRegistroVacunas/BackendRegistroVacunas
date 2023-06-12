@@ -1,7 +1,8 @@
-package com.project.AppRegistroVacunas.Services;
+package com.project.AppRegistroVacunas.ServiceImpl;
 
 import com.project.AppRegistroVacunas.Models.VaccinationCenter;
 import com.project.AppRegistroVacunas.Repositories.VaccinationCenterReposi;
+import com.project.AppRegistroVacunas.Services.VaccinationCenterService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 @Service
-public class VaccinationCenterServiceImpl implements VaccinationCenterService   {
+public class VaccinationCenterServiceImpl implements VaccinationCenterService {
     @Autowired
     VaccinationCenterReposi vaccinationCenterReposi;
 

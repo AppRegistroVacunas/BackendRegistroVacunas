@@ -1,8 +1,9 @@
-package com.project.AppRegistroVacunas.Services;
+package com.project.AppRegistroVacunas.ServiceImpl;
 
 
 import com.project.AppRegistroVacunas.Models.VaccineDetail;
 import com.project.AppRegistroVacunas.Repositories.VaccineDetailReposi;
+import com.project.AppRegistroVacunas.Services.VaccineDetailService;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

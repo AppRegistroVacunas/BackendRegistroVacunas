@@ -11,7 +11,7 @@ public interface VaccinesService {
     List<Vaccines> findAll();
     String addVaccines (Vaccines vaccines);
     Vaccines findById(int id);
-    String updateVaccines(Vaccines vaccines);
+    String updateVaccines(Vaccines vaccines, int id);
     String deleteVaccines(int id);
 
 }
