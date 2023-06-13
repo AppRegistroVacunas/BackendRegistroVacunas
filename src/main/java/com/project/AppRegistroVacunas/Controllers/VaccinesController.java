@@ -4,9 +4,8 @@ import com.project.AppRegistroVacunas.Models.Vaccines;
 import com.project.AppRegistroVacunas.Services.VaccinesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 @RequestMapping("/api/vaccines/v0")
@@ -36,12 +35,12 @@ public class VaccinesController {
 
     @PutMapping("/vaccines/{id}")
     @ResponseBody
-    public  String update (@RequestBody Vaccines vaccines,@PathVariable int id){
+    public String update (@RequestBody Vaccines vaccines,@PathVariable int id){
         return vaccinesService.updateVaccines(vaccines,id);
     }
     @DeleteMapping("/vaccines/{id}")
     @ResponseBody
-    public String update (@PathVariable int id){
+    public String deleteVaccines(@PathVariable int id){
         return vaccinesService.deleteVaccines(id);
     }
 
