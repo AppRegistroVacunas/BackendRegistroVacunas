@@ -23,11 +23,10 @@ public class VaccinationCenterServiceImpl implements VaccinationCenterService {
     @Override
     @Transactional
     public String addVaccinationCenter(VaccinationCenter vaccinationCenter) {
-        int id=vaccinationCenter.getId();
         String name=vaccinationCenter.getName();
         String address=vaccinationCenter.getAddress();
 
-        vaccinationCenterReposi.addVaccinationCenter(id,name,address);
+        vaccinationCenterReposi.addVaccinationCenter(name,address);
 
         try{
             return "the operation was successful";
@@ -44,12 +43,11 @@ public class VaccinationCenterServiceImpl implements VaccinationCenterService {
 
     @Override
     @Transactional
-    public String updateVaccinationCenter(VaccinationCenter vaccinationCenter) {
-        int id=vaccinationCenter.getId();
+    public String updateVaccinationCenter(VaccinationCenter vaccinationCenter,int id) {
         String name=vaccinationCenter.getName();
         String address=vaccinationCenter.getAddress();
 
-        vaccinationCenterReposi.addVaccinationCenter(id,name,address);
+        vaccinationCenterReposi.updateVaccinationCenter(id,name,address);
 
         try{
             return "the operation was successful";

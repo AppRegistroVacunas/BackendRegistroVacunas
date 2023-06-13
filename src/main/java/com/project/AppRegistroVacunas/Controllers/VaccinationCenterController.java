@@ -36,10 +36,10 @@ public class VaccinationCenterController {
         return vaccinationCenterService.findById(id);
     }
 
-    @PutMapping("/vaccinationCenter")
+    @PutMapping("/vaccinationCenter/{id}")
     @ResponseBody
-    public String update(@RequestBody VaccinationCenter vaccinationCenter){
-        return vaccinationCenterService.updateVaccinationCenter(vaccinationCenter);
+    public String update(@RequestBody VaccinationCenter vaccinationCenter, int id){
+        return vaccinationCenterService.updateVaccinationCenter(vaccinationCenter,id);
     }
 
     @DeleteMapping("/vaccinationCenter/{id}")

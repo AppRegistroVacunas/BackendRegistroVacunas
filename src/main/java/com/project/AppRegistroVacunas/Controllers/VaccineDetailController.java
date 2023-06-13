@@ -31,10 +31,10 @@ public class VaccineDetailController {
     public  VaccineDetail findID(@PathVariable int id){
         return vaccineDetailService.findById(id);
     }
-    @PutMapping("/vaccineDetail")
+    @PutMapping("/vaccineDetail/{id}")
     @ResponseBody
-    public String update (@RequestBody VaccineDetail vaccineDetail){
-        return vaccineDetailService.updateVaccineDetail(vaccineDetail);
+    public String update (@RequestBody VaccineDetail vaccineDetail, @PathVariable int id){
+        return vaccineDetailService.updateVaccineDetail(vaccineDetail,id);
     }
     @DeleteMapping ("/vaccineDetail/{id}")
     @ResponseBody

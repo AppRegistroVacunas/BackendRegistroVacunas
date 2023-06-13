@@ -11,6 +11,6 @@ public interface VaccinationCenterService {
     List<VaccinationCenter> findAll();
     String addVaccinationCenter (VaccinationCenter vaccinationCenter);
     VaccinationCenter findById(int id);
-    String updateVaccinationCenter (VaccinationCenter vaccinationCenter);
+    String updateVaccinationCenter (VaccinationCenter vaccinationCenter, int id);
     String deleteVaccinationCenter (int id);
 }

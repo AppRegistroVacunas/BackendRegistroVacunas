@@ -1,5 +1,6 @@
 package com.project.AppRegistroVacunas.Models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -20,8 +21,10 @@ public class Vaccines {
     @Column(name = "against_to")
     private String againstTo;
     @Column(name = "creation_date")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date creationDate;
     @Column(name = "due_date")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date dueDate;
 
     public Vaccines(){

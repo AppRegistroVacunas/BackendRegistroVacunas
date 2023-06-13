@@ -52,8 +52,7 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     @Transactional
-    public String updatePerson(Persons persons) {
-        String dni=persons.getDni();
+    public String updatePerson(Persons persons, String dni) {
         String name=persons.getName();
         String lastname=persons.getLastname();
         String email=persons.getEmail();

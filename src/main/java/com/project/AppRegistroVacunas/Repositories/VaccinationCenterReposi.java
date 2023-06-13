@@ -16,9 +16,8 @@ public interface VaccinationCenterReposi extends CrudRepository<VaccinationCente
 
 
     @Modifying
-    @Query (value = "INSERT INTO VaccinationCenter (id,name,address)" + "VALUES(:id, :name, :address)" )
+    @Query (value = "INSERT INTO VaccinationCenter (name,address)" + "VALUES(:name, :address)" )
     public void addVaccinationCenter (
-            @Param("id") int id,
             @Param("name") String name,
             @Param("address")String address
     );
@@ -26,12 +25,12 @@ public interface VaccinationCenterReposi extends CrudRepository<VaccinationCente
     VaccinationCenter findById(@Param("id") int id);
 
     @Modifying
-    @Query (value = "UPDATE  VaccinationCenter SET   name=:name, address=:address " + " WHERE id=:id" )
-    public void updateVaccinationCenter (@Param("id") int id,
+    @Query (value = "UPDATE  VaccinationCenter SET name=:name, address=:address " + " WHERE id=:id" )
+    public void updateVaccinationCenter(
+            @Param("id") int id,
             @Param("name") String name,
             @Param("address")String address
     );
-
 
     @Modifying
     @Query(value= "delete from VaccinationCenter v where v.id =:id ")

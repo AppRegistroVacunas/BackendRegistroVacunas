@@ -42,8 +42,7 @@ public class VeccineDetailServiceImpl implements VaccineDetailService {
 
     @Override
     @Transactional
-    public String updateVaccineDetail(VaccineDetail vaccineDetail) {
-        int id=vaccineDetail.getId();
+    public String updateVaccineDetail(VaccineDetail vaccineDetail, int id) {
         Date date=vaccineDetail.getDate();
         String place=vaccineDetail.getPlace();
 

@@ -10,6 +10,6 @@ public interface VaccineDetailService {
     List<VaccineDetail> findAll();
     String addVaccineDetail (VaccineDetail vaccineDetail);
     VaccineDetail findById(int id);
-    String updateVaccineDetail (VaccineDetail vaccineDetail);
+    String updateVaccineDetail (VaccineDetail vaccineDetail, int id);
     String deleteVaccineDetail (int id);
 }

@@ -11,7 +11,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/persons/v0")
-@CrossOrigin(origins = "http://localhost:4200")
 public class PersonController {
 
     @Autowired
@@ -43,10 +42,10 @@ public class PersonController {
     }
 
 
-    @PutMapping("/persons")
+    @PutMapping("/persons/{dni}")
     @ResponseBody
-    public String update(@RequestBody Persons persons){
-        return personService.updatePerson(persons);
+    public String update(@RequestBody Persons persons,@PathVariable String dni){
+        return personService.updatePerson(persons,dni);
     }
 
     @DeleteMapping("/persons/{dni}")
