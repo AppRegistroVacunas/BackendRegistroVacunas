@@ -1,5 +1,6 @@
 package com.project.AppRegistroVacunas.Models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -12,15 +13,14 @@ public class VaccineDetail {
     @Column(name="id")
     private int id;
     @Column(name="date")
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date date;
     @Column(name="place")
     private String place;
-
     @ManyToOne
     private Vaccines vaccines;
     @ManyToOne
     private VaccinationCenter vaccinationCenter;
-
     @ManyToOne
     private Persons persons;
 

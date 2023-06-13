@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.List;
 
 @Service
-public class VeccineDetailServiceImpl implements VaccineDetailService {
+public class VaccineDetailServiceImpl implements VaccineDetailService {
     @Autowired
     VaccineDetailReposi vaccineDetailReposi;
     @Override
@@ -23,11 +23,10 @@ public class VeccineDetailServiceImpl implements VaccineDetailService {
     @Override
     @Transactional
     public String addVaccineDetail(VaccineDetail vaccineDetail) {
-        int id=vaccineDetail.getId();
         Date date=vaccineDetail.getDate();
         String place=vaccineDetail.getPlace();
 
-        vaccineDetailReposi.addVaccineDetail(id,date,place);
+        vaccineDetailReposi.addVaccineDetail(date,place);
         try{
             return "the operation was successful";
         }catch (Error e){
@@ -46,7 +45,7 @@ public class VeccineDetailServiceImpl implements VaccineDetailService {
         Date date=vaccineDetail.getDate();
         String place=vaccineDetail.getPlace();
 
-        vaccineDetailReposi.addVaccineDetail(id,date,place);
+        vaccineDetailReposi.updateVaccineDetail(id,date,place);
         try{
             return "the operation was successful";
         }catch (Error e){

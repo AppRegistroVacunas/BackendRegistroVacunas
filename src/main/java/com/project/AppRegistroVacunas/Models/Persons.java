@@ -1,5 +1,6 @@
 package com.project.AppRegistroVacunas.Models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -19,6 +20,7 @@ public class Persons {
     @Column(name="job",nullable = false, length = 20)
     private String job;
     @Column(name="birthday",nullable = false)
+    @JsonFormat(pattern = "yyyy-MM-dd")
     private Date birthday;
 
     @Column(name="nationality",nullable = false, length = 20)

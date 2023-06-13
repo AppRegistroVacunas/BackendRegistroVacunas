@@ -38,7 +38,7 @@ public class VaccinationCenterController {
 
     @PutMapping("/vaccinationCenter/{id}")
     @ResponseBody
-    public String update(@RequestBody VaccinationCenter vaccinationCenter, int id){
+    public String update(@RequestBody VaccinationCenter vaccinationCenter, @PathVariable int id){
         return vaccinationCenterService.updateVaccinationCenter(vaccinationCenter,id);
     }
 

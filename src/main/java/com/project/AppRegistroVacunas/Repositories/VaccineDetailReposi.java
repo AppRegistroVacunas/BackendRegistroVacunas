@@ -18,10 +18,9 @@ public interface VaccineDetailReposi extends CrudRepository<VaccineDetail, Integ
     List<VaccineDetail> findAll();
 
     @Modifying
-    @Query(value="INSERT INTO VaccineDetail(id,date,place)"+
-    "VALUES(:id,:date,:place)")
+    @Query(value="INSERT INTO VaccineDetail(date,place)"+
+    "VALUES(:date,:place)")
     public void addVaccineDetail(
-            @Param("id") int id,
             @Param("date")Date date,
             @Param ("place")String place
             );
